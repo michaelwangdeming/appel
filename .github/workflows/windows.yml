@@ -13,10 +13,12 @@ jobs:
   pyinstaller-build:
     runs-on: windows-latest
     steps:
+      - name: Install Requirements.txt
+        run: 'pip install -r requirements.txt'
       - name: Create Executable
         uses: sayyid5416/pyinstaller@v1
         with:
           python_ver: '3.12'
           spec: 'main.py'
           upload_exe_with_name: 'Appel'
-          options: --onefile, --name "love_heart", --windowed, 
+          options: --name "Appel", --windowed, 
